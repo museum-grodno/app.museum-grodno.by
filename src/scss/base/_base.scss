@@ -1,0 +1,30 @@
+@import "../dialogs/references";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px 0;
+  font: 12px/24px Arial, Helvetica, sans-serif;
+  text-align: center;
+  //background: url('~images/background.jpg');
+  background-color: #343a40;
+}
+
+.container{
+  width: 100%;
+}
+
+.block-ui > .block-ui-container {
+  display:none;
+}
+
+/*.ref-dialog-content{
+  background: #d3d3d3;
+  border: 4px ridge #007bff;
+  text-align: left;
+  font-size: 15px;
+  padding: 15px;
+}*/

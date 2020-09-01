@@ -1,0 +1,81 @@
+.references{
+
+  color: white;
+
+  .maindesk-menu{
+    text-align: left;
+    background: rgba(31,31,31,0.5);
+  }
+
+  .references-table{
+    background: rgba(31, 31, 31, 0.5);
+    border-radius: 20px;
+    border: white;
+    border-width: 1px;
+  }
+
+  .icons-tab-panel i{
+    font-size: 20px;
+  }
+
+  .references-menu  .references-menu--item:hover,
+  .icons-tab-panel i:hover{
+    color: #343a40;
+  }
+
+  .filter-form .form-group label{
+    margin-right: 5px;
+    margin-top: -4px;
+  }
+
+  .filter-form .form-group i,
+  .filter-form .form-group input
+  {
+   color: #343a40;
+    font-size: 15px;
+    height: 25px;
+  }
+
+  .references-menu,
+  .references-filter--item,
+  .references-menu--item {
+    margin: 0;
+  }
+
+  /*.references-filter--item{
+    margin: -4px 0 0 0;
+  }*/
+
+  .references-menu{
+    background: #96aa8f;
+    padding: 20px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+    width: 100%;
+    box-shadow: 8px 8px 17px -7px #000000;
+    font-size: 15px;
+    text-align: left;
+  }
+
+
+
+  .references-table tbody:hover{
+    background: #8F97AA;
+    padding: 20px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    box-shadow: 6px 18px 17px -7px #000000;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .references-save-panel{
+    margin-top: 15px;
+
+    input{
+      color: #000;
+    }
+  }
+
+}

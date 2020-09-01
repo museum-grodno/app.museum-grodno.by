@@ -1,0 +1,32 @@
+.servicedesk{
+
+  color: white;
+
+  .servicedesk-menu{
+    text-align: left;
+    background: rgba(31,31,31,0.5);
+
+  }
+  
+  .desk-tile{
+    background: #96aa8f;
+    padding: 20px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    box-shadow: 8px 8px 17px -7px #000000;
+    font-size: 30px;
+    text-align: left;
+  }
+
+  .desk-tile a{
+  color: #ffffff;
+  }
+
+  .desk-tile a svg{
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+  }
+
+}

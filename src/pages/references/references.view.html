@@ -1,0 +1,129 @@
+<div class="row references">
+    <div class="row references-menu">
+        <div class="references-filter--item col-sm-4">
+            <form class="form-inline filter-form">
+                <div class="form-group">
+                    <label for="nameFilter">Справочник</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control col-sm-10" id="nameFilter" ng-model="$ctrl.refFilter.ref_title">
+                        <div class="input-group-append mb-2" ng-click="$ctrl.clearFilter()">
+                            <i class="fa fa-window-close input-group-text" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="references-menu--item  col-sm-6" ng-click="$ctrl.editRef(-1)">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <label>Дабавіць даведнік</label>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="row">
+            <table class="table table-dark references-table ">
+                <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="col-md-12">
+                            <label>№</label>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="col-md-12">
+                            <label>Назва даведніка</label>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="col-md-12">
+                            <label>Апісанне</label>
+                        </div>
+                    </th>
+                    <th scope="col">
+
+                    </th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="(number,ref) in $ctrl.refList | filter: $ctrl.refFilter">
+                <tr ng-click="$ctrl.viewRef(number)">
+
+                    <th scope="row">{{number + 1}}</th>
+                    <td>{{ref.ref_title}}</td>
+                    <td>{{ref.ref_description}}</td>
+                    <td>
+                        <div class="row icons-tab-panel">
+                            <div class="col-md-2" ng-click="$ctrl.editRef(number)">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-2" ng-click="$ctrl.editRef(number)">
+                                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-2" ng-click="$ctrl.editRef(number)">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!--<div class="row references-table references-save-panel">
+            <input type="hidden" ng-model="$ctrl.refInsertData.id">
+            <input type="text" ng-model="$ctrl.refInsertData.ref_title" class="col-sm-2">
+            <input type="text" ng-model="$ctrl.refInsertData.ref_name" class="col-sm-2">
+            <input type="text" ng-model="$ctrl.refInsertData.ref_description" class="col-sm-2">
+            <button type="button" class="btn btn-primary col-sm-3" name="saveButton" ng-click="$ctrl.saveRef()">
+                Сохранить
+            </button>
+            <button type="button" class="btn btn-primary col-sm-3" name="cancelRef" ng-click="$ctrl.cancelRef()">
+                Отмена
+            </button>
+        </div>-->
+    </div>
+    <!--<div class="col-sm-6">
+        <div class="row">
+            <table class="table table-dark references-table ">
+                <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Значенме</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="(number,refValue) in $ctrl.refListValue">
+                <tr ng-click="">
+
+                    <th scope="row">{{number + 1}}</th>
+                    <td>{{refValue.ref_value}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" name="viewValue_{{number+1}}" ng-click="$ctrl.editRefValue(number)">
+                            Редактировать
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row references-table references-save-panel">
+            <input type="hidden" ng-model="$ctrl.refValueInsertData.ref_id">
+            <input type="hidden" ng-model="$ctrl.refValueInsertData.ref_value_id">
+            <input type="text" ng-model="$ctrl.refValueInsertData.ref_value" class="col-sm-3">
+            <input type="text" ng-model="$ctrl.refValueInsertData.ref_value_order" class="col-sm-3">
+            <button type="button" class="btn btn-primary col-sm-3" name="saveButton" ng-click="$ctrl.saveRefValue()">
+                Сохранить
+            </button>
+            <button type="button" class="btn btn-primary col-sm-3" name="cancelRefValue" ng-click="$ctrl.cancelRefValue()">
+                Отмена
+            </button>
+        </div>
+
+    </div>-->
+</div>
