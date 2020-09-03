@@ -46,6 +46,33 @@ class NetworkService {
             });
     }
 
+    sendPut (endPoint, userData, /*headers,*/ /*nameSpaceObject ,*/callBack, backError ){
+        this.$http({
+            method: "PUT",
+            url: this.API_URL+endPoint,
+
+            data: userData,
+
+            //headers: headers
+        })
+
+            .then( (response)=> {
+                if(!!callBack) {
+                    callBack.call(this, response.data);
+                } else {
+                    return response.data;
+                }
+            })
+
+            .catch( (error) =>{
+                if(!!backError){
+                    backError.call(this, error);
+                } else {
+                    console.log(error);
+                }
+            });
+    }
+
     sendGet (endPoint, /*nameSpaceObject ,*/callBack, backError ){
        return this.$http({
             method: "GET",

@@ -12,7 +12,6 @@ export default class ReferencesUpdateController {
     save() {
         this.referencesService.updateReferencesList(
             (data) => {
-                console.log(data);
                 this.$uibModalInstance.close(data);
             },
             this.refUpdateData

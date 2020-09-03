@@ -53,6 +53,9 @@ const MUS_APP =  angular
 MUS_APP.run(['$templateCache',function($templateCache){
    $templateCache.put('/dialogs/references-update/references-update.html',
       require('./common/dialogs/references-update/references-update.html'));
+
+    $templateCache.put('/dialogs/references-update-list/references-update-list.html',
+        require('./common/dialogs/references-update-list/references-update-list.html'));
 }]);
 
 export { MUS_APP };

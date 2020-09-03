@@ -1,12 +1,13 @@
 <div class="modal-header">
     <h4 class="modal-title">
     <span>
-     {{!!ctrl.refUpdateData.ref_id ? 'Рэдагаваць даведнік' : 'Дадаць даведнік' }}
+     {{ctrl.refUpdateData.id !=0 ? 'Рэдагаваць даведнік' : 'Дадаць даведнік' }}
     </span>
     </h4>
     <button type="button"
             class="close"
-            ng-click="ctrl.cancel()">&times;
+            ng-click="ctrl.cancel()">
+        <i class="fa fa-window-close-o" aria-hidden="true"></i>
     </button>
 </div>
 <div class="modal-body">
