@@ -18,10 +18,24 @@ export default class ReferencesController {
             ref_value_order: null
         };
 
-        this.getRefListValue = ((data) => {
-            this.refListValue = data;
+       /* this.getRefListValue = ((data) => {
+            this.dialogs.create(
+                '/dialogs/references-update-list/references-update-list.html',
+                'ReferencesUpdateListController', {
+                    data: updateData
+                },
+                {
+                    size: "md",
+                    windowClass: 'ref-dialog',
+                    backdrop: 'static'
+                },
+                'ctrl').result.then((data) => {
+                if (!!data) {
+                    this.refreshPage(data);
+                }
+            });
         });
-
+*/
         this.updateReferences = ((updateData) => {
             this.dialogs.create(
                 '/dialogs/references-update/references-update.html',
@@ -40,9 +54,24 @@ export default class ReferencesController {
             });
         });
 
+        this.updateReferencesList = ((updateData) => {
+            this.dialogs.create(
+                '/dialogs/references-update-list/references-update-list.html',
+                'ReferencesUpdateListController', {
+                    data: updateData
+                },
+                {
+                    size: "md",
+                    windowClass: 'ref-dialog',
+                    backdrop: 'static'
+                },
+                'ctrl');
+        });
+
         this.getRefListValueRequest = ((ref_id) => {
             this.referencesService.networkService.sendGet(this.referencesService.networkService.pluginNamespace + '/references/' + ref_id + '/values',
-                this.getRefListValue, this.referencesService.errorService.getError);
+                this.getRefListValue,
+                this.referencesService.errorService.getError);
         });
 
         this.refreshPageValue = ((data) => {
@@ -116,7 +145,30 @@ export default class ReferencesController {
         this.updateReferences(refInsertData);
     }
 
-    editRefValue(nuberRef) {
+    editRefList(numberRef) {
+        let refInsertData = null;
+
+        if (numberRef < 0) {
+            refInsertData = {
+                id: 0,
+                ref_name: '',
+                ref_title: '',
+                ref_description: ''
+            };
+        } else {
+            refInsertData = {
+                id: this.refList[numberRef].id,
+                ref_name: this.refList[numberRef].ref_name,
+                ref_title: this.refList[numberRef].ref_title,
+                ref_description: this.refList[numberRef].ref_description
+            };
+        }
+
+        this.updateReferencesList(refInsertData);
+    }
+
+    /* Не используется */
+    /*editRefValue(nuberRef) {
 
         this.refValueInsertData = {
             ref_id: this.refListValue[nuberRef].ref_id,
@@ -152,6 +204,8 @@ export default class ReferencesController {
         return false;
     }
 
+*/
+
     cancelRef() {
         this.refInsertData = {
             id: 0,
@@ -161,14 +215,6 @@ export default class ReferencesController {
         };
     }
 
-    cancelRefValue() {
-        this.refValueInsertData = {
-            ref_id: 1,
-            ref_value_id: null,
-            ref_value: '',
-            ref_value_order: null
-        };
-    }
 
     viewRef(ref_id) {
         this.refValueInsertData.ref_id = this.refList[ref_id].id;
