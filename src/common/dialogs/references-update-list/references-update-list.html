@@ -6,39 +6,41 @@
     </h4>
     <button type="button"
             class="close"
-            ng-click="ctrl.cancel()">&times;
+            ng-click="ctrl.cancel()">
+        <i class="fa fa-window-close-o" aria-hidden="true"></i>
     </button>
 </div>
 <div class="modal-body">
     <form>
         <input type="hidden" ng-model="ctrl.refUpdateData.id">
         <div class="form-group">
-            <label for="RefTitle">Назва даведніка</label>
+            <label for="RefTitle">Пошук</label>
             <input type="text"
                    class="form-control"
                    id="RefTitle"
-                   placeholder="Назва даведніка"
                    ng-model="ctrl.refUpdateData.ref_title">
         </div>
 
         <div class="form-group">
-            <label for="RefName">Абазначэнне даведніка</label>
-            <input type="text"
-                   class="form-control"
-                   id="RefName"
-                   placeholder="Абазначэнне даведніка"
-                   ng-model="ctrl.refUpdateData.ref_name">
+            <label for="SelectSort">Сартаванне</label>
+            <select class="form-control" id="SelectSort">
+                <option value="0">Безумоўна</option>
+                <option value="1">Па ўзрастанні</option>
+                <option value="2">Па змяншэнні</option>
+            </select>
         </div>
 
-        <div class="form-group">
-            <label for="RefDescription">Аписанне даведніка</label>
-            <textarea class="form-control"
-                      id="RefDescription"
-                      ng-model="ctrl.refUpdateData.ref_description"
-                      rows="3">
-
-            </textarea>
+        <div class="form-group row">
+            <label for="staticData" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext" id="staticData" value="Test1">
+                <input type="text" class="form-control-plaintext" id="staticData" value="Test2">
+                <input type="text" class="form-control-plaintext" id="staticData" value="Test3">
+                <input type="text" class="form-control-plaintext" id="staticData" value="Test4">
+                <input type="text" class="form-control-plaintext" id="staticData" value="Test5">
+            </div>
         </div>
+
     </form>
 </div>
 <div class="modal-footer">
