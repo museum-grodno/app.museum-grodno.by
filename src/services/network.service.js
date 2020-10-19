@@ -4,7 +4,7 @@ class NetworkService {
         this.log = $log.log;
         this.$sessionStorage = $window.sessionStorage;
         this.$state = $state;
-        this.API_URL = 'https://museum-grodno.by/wp-json/';
+        this.API_URL = 'https://grodno-museum.by/wp-json/';
         //this.API_URL = 'http://localhost/wordpress/wp-json/';
         this.pluginNamespace = 'museum-funds/v1';
         /*this.headersDefault =

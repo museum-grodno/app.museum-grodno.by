@@ -70,7 +70,9 @@ export default class ReferencesController {
 
         this.getRefListValueRequest = ((ref_id) => {
             this.referencesService.networkService.sendGet(this.referencesService.networkService.pluginNamespace + '/references/' + ref_id + '/values',
-                this.getRefListValue,
+                (result)=>{
+                    this.updateReferencesList(result);
+                },
                 this.referencesService.errorService.getError);
         });
 

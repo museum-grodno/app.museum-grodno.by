@@ -1,6 +1,7 @@
 export default class ReferencesUpdateListController {
     constructor(data, ReferencesService, $scope, $uibModalInstance) {
-        this.refUpdateData = data.data
+        this.refValueList = data.data;
+        console.log(this.refValueList);
         this.referencesService = ReferencesService;
         this.$uibModalInstance = $uibModalInstance;
     }
@@ -12,7 +13,6 @@ export default class ReferencesUpdateListController {
     save() {
         this.referencesService.updateReferencesList(
             (data) => {
-                console.log(data);
                 this.$uibModalInstance.close(data);
             },
             this.refUpdateData
